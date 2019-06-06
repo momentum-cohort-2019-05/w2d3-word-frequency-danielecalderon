@@ -7,7 +7,7 @@ STOP_WORDS = [
 ]
 
 
-#def print_word_freq():
+def print_word_freq(file):
 text = open("seneca_falls.txt", "r")
 #print (text.readlines())
 
@@ -31,18 +31,18 @@ for line in text:
     sort.reverse()
     print (counts)
 
-# if __name__ == "__main__":
-#     import argparse
-#     from pathlib import Path
+if __name__ == "__main__":
+    import argparse
+    from pathlib import Path
 
-#     parser = argparse.ArgumentParser(
-#         description='Get the word frequency in a text file.')
-#     parser.add_argument('file', help='file to read')
-#     args = parser.parse_args()
+    parser = argparse.ArgumentParser(
+        description='Get the word frequency in a text file.')
+    parser.add_argument('file', help='file to read')
+    args = parser.parse_args()
 
-#     file = Path(args.file)
-#     if file.is_file():
-#         print_word_freq(file)
-#     else:
-#         print(f"{file} does not exist!")
-#         exit(1)
+    file = Path(args.file)
+    if file.is_file():
+        print_word_freq(file)
+    else:
+        print(f"{file} does not exist!")
+        exit(1)
